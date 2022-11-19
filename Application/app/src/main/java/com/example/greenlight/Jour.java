@@ -44,7 +44,7 @@ public class Jour extends SortieDonnee {
     public void affiche() {
         System.out.println(jour + " : " + dvalue);
         for (Heure i : listeHeure) {
-            System.out.println(listeHeure);
+            affiche(listeHeure);
         }
     }
 }
