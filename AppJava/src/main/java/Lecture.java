@@ -12,6 +12,7 @@ public class Lecture {
         return connexion;
     }
 
+    // Initialisation de la connexion
     public void initDb () {        
         try {
             connexion.createStatement();
@@ -21,6 +22,7 @@ public class Lecture {
         }
     }
 
+    // Recherche dans la base de données
     public String searchIntoDb () throws SQLException {
         String sql;
         ResultSet rs;
@@ -35,7 +37,7 @@ public class Lecture {
             rs  = pstmt.executeQuery();
             // Traitement du résultat
             while (rs.next()) {
-                // On récupère l'objet JSON
+                // On récupère l'objet JSON présent sous "data"
                 resultat = rs.getString("data");
             }
         }
