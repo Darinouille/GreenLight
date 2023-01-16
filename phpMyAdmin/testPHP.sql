@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : dim. 15 jan. 2023 à 21:26
+-- Généré le : lun. 16 jan. 2023 à 00:29
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.2.0
 
@@ -111,23 +111,16 @@ INSERT INTO `Heure` (`idValue`, `pas`, `hvalue`, `#idJour`) VALUES
 (70, 21, 1, 2),
 (71, 22, 1, 2),
 (72, 23, 1, 2),
-(73, 0, 3, 0),
-(74, 1, 3, 0),
-(75, 2, 1, 0),
-(76, 3, 1, 0),
-(77, 4, 1, 0),
-(78, 5, 1, 0),
-(79, 6, 1, 0),
-(80, 7, 3, 0),
-(81, 8, 3, 0),
-(82, 9, 3, 0),
-(83, 10, 3, 0),
-(84, 11, 3, 0),
-(85, 12, 3, 0),
-(86, 13, 3, 0),
-(87, 14, 2, 0),
-(88, 15, 2, 0),
-(89, 16, 2, 0);
+(73, 7, 3, 0),
+(74, 8, 3, 0),
+(75, 9, 3, 0),
+(76, 10, 3, 0),
+(77, 11, 3, 0),
+(78, 12, 3, 0),
+(79, 13, 3, 0),
+(80, 14, 2, 0),
+(81, 15, 2, 0),
+(82, 16, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -138,6 +131,7 @@ INSERT INTO `Heure` (`idValue`, `pas`, `hvalue`, `#idJour`) VALUES
 CREATE TABLE `Jour` (
   `idJour` int(1) NOT NULL,
   `jour` datetime NOT NULL,
+  `generationFichier` datetime NOT NULL,
   `#dvalue` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -145,11 +139,11 @@ CREATE TABLE `Jour` (
 -- Déchargement des données de la table `Jour`
 --
 
-INSERT INTO `Jour` (`idJour`, `jour`, `#dvalue`) VALUES
-(0, '2022-06-03 00:00:00', 3),
-(1, '2022-06-04 00:00:00', 3),
-(2, '2022-06-05 00:00:00', 2),
-(3, '2022-06-06 00:00:00', 1);
+INSERT INTO `Jour` (`idJour`, `jour`, `generationFichier`, `#dvalue`) VALUES
+(0, '2022-06-03 00:00:00', '2022-06-03 07:36:25', 3),
+(1, '2022-06-04 00:00:00', '2022-06-03 07:36:25', 3),
+(2, '2022-06-05 00:00:00', '2022-06-03 07:36:25', 2),
+(3, '2022-06-06 00:00:00', '2022-06-03 07:36:25', 1);
 
 -- --------------------------------------------------------
 
@@ -201,7 +195,7 @@ ALTER TABLE `Message`
 -- AUTO_INCREMENT pour la table `Heure`
 --
 ALTER TABLE `Heure`
-  MODIFY `idValue` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `idValue` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT pour la table `Message`
