@@ -3,6 +3,7 @@ import java.sql.SQLException;
 import org.json.*;
 
 public class Main {
+    // Pour convertir le format de date ecowattDemo.db en format de date sql
     public static String convertirDate(String date1) {
         String date2;
         // On a quelque chose sous la forme : yyyy-mm-jj-Thh:mm:ss+02:zz
