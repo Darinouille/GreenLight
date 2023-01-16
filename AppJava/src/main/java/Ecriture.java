@@ -11,6 +11,7 @@ public class Ecriture {
         return connexion;
     }
 
+    // Pour initier une connexion
     public void initDb () {        
         try {
             connexion.createStatement();
@@ -20,6 +21,7 @@ public class Ecriture {
         }
     }
 
+    // Pour ajouter dans la table Jour
     public void insertJour(int j, String jour, int dvalue) {
         String sql;
 
@@ -35,6 +37,7 @@ public class Ecriture {
         }
     }
 
+    // Pour ajouter dans la table Heure
     public void insertHeure(int pas, int hvalue, int j) {
         String sql;
 
@@ -51,6 +54,7 @@ public class Ecriture {
         }
     }
 
+    // Pour réinitialiser les tables Jour et Heure
     public void reinitialiser() {
         String sql1;
         String sql2;
