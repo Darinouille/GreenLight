@@ -3,7 +3,6 @@ import java.sql.SQLException;
 import org.json.*;
 
 public class Main {
-    // Pour convertir le format de date ecowattDemo.db en format de date sql
     public static String convertirDate(String date1) {
         String date2;
         // On a quelque chose sous la forme : yyyy-mm-jj-Thh:mm:ss+02:zz
@@ -27,6 +26,7 @@ public class Main {
         // On se connecte à la base de données pour écrire
         Ecriture e;
         int pos;
+        int posh;
 
         e = new Ecriture();
         e.initDb();
@@ -55,10 +55,12 @@ public class Main {
             JSONArray valeursH = json.getJSONArray("signals").getJSONObject(pos).getJSONArray("values");
             int valeurH1 = json.getJSONArray("signals").getJSONObject(pos).getJSONArray("values").getJSONObject(0).getInt("pas");
 
-            for (int h = valeurH1; h < valeursH.length(); h++) {
-                int hvalue = valeursH.getJSONObject(h).getInt("hvalue");
+            posh = 0;
+            for (int h = valeurH1; h < 24; h++) {
+                int hvalue = valeursH.getJSONObject(posh).getInt("hvalue");
                 e.insertHeure(h, hvalue, j);
 
+                posh = posh + 1;
                 System.out.println("• " + h + "h : " + hvalue);
             }
 
