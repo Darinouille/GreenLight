@@ -1,5 +1,4 @@
 <?php
-
 include("connexion.php");
 
 // Les données heures du jour 0
