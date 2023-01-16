@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : dim. 15 jan. 2023 à 21:26
+-- Généré le : lun. 16 jan. 2023 à 00:29
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.2.0
 
@@ -43,6 +43,7 @@ CREATE TABLE `Heure` (
 CREATE TABLE `Jour` (
   `idJour` int(1) NOT NULL,
   `jour` datetime NOT NULL,
+  `generationFichier` datetime NOT NULL,
   `#dvalue` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -96,7 +97,7 @@ ALTER TABLE `Message`
 -- AUTO_INCREMENT pour la table `Heure`
 --
 ALTER TABLE `Heure`
-  MODIFY `idValue` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `idValue` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT pour la table `Message`
