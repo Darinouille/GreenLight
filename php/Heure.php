@@ -1,29 +1,74 @@
 <?php
 
 include("connexion.php");
-try {
-    $bd = new PDO ( "mysql:host = $server; dbname=$base", "$user", "$password"); 
-    $bd->exec("SET NAMES utf8");
-    //echo("Connexion à la base de donnée réussie, bien joué");
-}
-catch (Exception $e){
-    print_r($e -> getMessage());
-    die("Erreur de connexion à la base ");
-}
 
-$heure0 = $bd ->query("SELECT Heure.pas,Heure.hvalue FROM Jour  LEFT JOIN Heure ON Jour.idJour=Heure.`#idjour` WHERE Jour.idJour=3" );
-$monheure0 = ($heure0->fetch(PDO::FETCH_ASSOC));
+// Les données heures du jour 0
+$sql = "SELECT Heure.pas, Heure.hvalue FROM Jour LEFT JOIN Heure ON Jour.idJour=Heure.`#idjour` WHERE Jour.idJour=0";
+$req = $bd ->prepare($sql);
+$req->execute();
+$heures0 = $req->fetchall();
+$req->closeCursor();
 
-$montableau = array("pas" => "hvalue");
-
-foreach ($heure0 as $key){
-    $montableau[0] = $key['pas'];
-    $montableau[1] = $key['hvalue'];
+$hjour0 = array("pas" => "hvalue");
+foreach($heures0 as $h) {
+  $pas = $h['pas'];
+  $hvalue = $h['hvalue'];
+  $hjour0[$pas] = $hvalue;
 }
 
-print_r($montableau);
-echo json_encode($montableau);
 
+// Les données heures du jour 1
+$sql = "SELECT Heure.pas, Heure.hvalue FROM Jour LEFT JOIN Heure ON Jour.idJour=Heure.`#idjour` WHERE Jour.idJour=1";
+$req = $bd ->prepare($sql);
+$req->execute();
+$heures1 = $req->fetchall();
+$req->closeCursor();
+
+$hjour1 = array("pas" => "hvalue");
+foreach($heures1 as $h) {
+  $pas = $h['pas'];
+  $hvalue = $h['hvalue'];
+  $hjour1[$pas] = $hvalue;
+}
+
+
+// Les données heures du jour 2
+$sql = "SELECT Heure.pas, Heure.hvalue FROM Jour LEFT JOIN Heure ON Jour.idJour=Heure.`#idjour` WHERE Jour.idJour=2";
+$req = $bd ->prepare($sql);
+$req->execute();
+$heures2 = $req->fetchall();
+$req->closeCursor();
+
+$hjour2 = array("pas" => "hvalue");
+foreach($heures2 as $h) {
+  $pas = $h['pas'];
+  $hvalue = $h['hvalue'];
+  $hjour2[$pas] = $hvalue;
+}
+
+
+// Les données heures du jour 3
+$sql = "SELECT Heure.pas, Heure.hvalue FROM Jour LEFT JOIN Heure ON Jour.idJour=Heure.`#idjour` WHERE Jour.idJour=3";
+$req = $bd ->prepare($sql);
+$req->execute();
+$heures3 = $req->fetchall();
+$req->closeCursor();
+
+$hjour3 = array("pas" => "hvalue");
+foreach($heures3 as $h) {
+  $pas = $h['pas'];
+  $hvalue = $h['hvalue'];
+  $hjour3[$pas] = $hvalue;
+}
+
+
+// Mise en forme des informations
+$tableau = array(
+  "Jour0: " => $hjour0,
+  "Jour1: " => $hjour1,
+  "Jour2: " => $hjour2,
+  "Jour3: " => $hjour3);
+
+// Transformation en json
+echo json_encode($tableau);
 ?>
-
-
