@@ -31,7 +31,7 @@ $monjour2 = ($jour2->fetch(PDO::FETCH_ASSOC));
 
 $j2 = array(
     "jour: " => $monjour2['jour'],
-    "dvalue: " => $monjour0['#dvalue'],
+    "dvalue: " => $monjour2['#dvalue'],
     "generation fichier: " => $monjour2['generationFichier'],
     "message: " => $monjour2['message'],
 );
