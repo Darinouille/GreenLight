@@ -1,4 +1,5 @@
 # GreenLight 🚦
+---
 *Ce projet a été réalisé par : Thomas BLANC, Aude BOULET, Darina CHAN, Tarek EL DADA et Benoît GIAUME.*
 
 Le support de présentation est accessible dans le fichier `GreenLight.pdf` ✨
