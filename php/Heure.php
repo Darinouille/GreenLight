@@ -64,11 +64,12 @@ foreach($heures3 as $h) {
 
 // Mise en forme des informations
 $tableau = array(
-  "Jour0: " => $hjour0,
-  "Jour1: " => $hjour1,
-  "Jour2: " => $hjour2,
-  "Jour3: " => $hjour3);
+  "Jour0" => $hjour0,
+  "Jour1" => $hjour1,
+  "Jour2" => $hjour2,
+  "Jour3" => $hjour3);
 
 // Transformation en json
 echo json_encode($tableau);
 ?>
+
