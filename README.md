@@ -18,7 +18,7 @@ Le programme à exécuter est `src/main/java/Main.java`
 ## 📁 php 🌱
 Le fichier `connexion.php` établit la connexion à la base de donnée mySQL
 
-## 📁 AppAndroid ☀️
+## 📁 AppAndroid.zip ☀️
 `app/src/main/java/com/example/greenlight/MainActivity.java` correspond à l'écran principal
 
 `app/src/main/java/com/example/greenlight/MainActivity2.java` affiche les données des jours suivant
