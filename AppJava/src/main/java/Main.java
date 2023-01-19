@@ -3,7 +3,7 @@ import java.sql.SQLException;
 import org.json.*;
 
 public class Main {
-    public static String convertirDate(String date1) {
+    public String convertirDate(String date1) {
         String date2;
         // On a quelque chose sous la forme : yyyy-mm-jj-Thh:mm:ss+02:zz
         //                                    01234567890123456789012345
@@ -14,7 +14,7 @@ public class Main {
         return date2;
     }
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException{
+    public void main(String[] args) throws SQLException, ClassNotFoundException{
         Lecture l;
         l = new Lecture();
         // Afficher le JSON : System.out.println(p.searchIntoDb());
